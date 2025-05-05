@@ -38,10 +38,10 @@ class Customer implements Runnable {
                 int result = banker.requestResources(customerId, request);
 
                 if (result == 0) { // Se tivermos retorno 0 a requisição foi um sucesso
-                    // Simular uso dos recursos por um tempo 50-250 ms
+                    // Simular uso dos recursos por um tempo 1000-2000 ms
                     System.out.println("Cliente " + customerId + ": Usando recursos...");
                     try {
-                        Thread.sleep(random.nextInt(50) + 200);
+                        Thread.sleep(random.nextInt(1000) + 1000);
                     } catch (InterruptedException e) {
                         System.out.println("Cliente " + customerId + " interrompido enquanto usava recursos.");
                         Thread.currentThread().interrupt();

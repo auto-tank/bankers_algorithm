@@ -50,6 +50,13 @@ public class TP1 {
         }
 
         Banker banker = new Banker(available, maxNeeds);
+        // Espera 5 segundos antes de continuar
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            System.err.println("Main Thread interrompida durante a espera.");
+            Thread.currentThread().interrupt(); // restaura o status de interrupção
+        }
 
         // --- Cria e Inicia as Threads Clientes ---
         Thread[] customerHandle = new Thread[Constants.NUMBER_OF_CUSTOMERS];
